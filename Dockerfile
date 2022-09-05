@@ -1,0 +1,8 @@
+FROM python:3.8-slim
+RUN pip install rasa
+WORKDIR /app
+ENV HOME=/app
+COPY . .
+#RUN rasa train nlu
+USER 1001
+CMD rasa run --model models --enable-api --port $PORT
