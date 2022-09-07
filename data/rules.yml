@@ -128,7 +128,6 @@ rules:
 - rule: Slow Diaphragmatic Breathing path 2
   steps:
   - action: utter_slow_diaphragmatic_breathing_1
-  - action: utter_slow_diaphragmatic_breathing_2
   - intent: maybe_later
   - action: utter_slow_diaphragmatic_breathing_3
 
@@ -166,7 +165,6 @@ rules:
 - rule: Mindfulness Exercise path 3
   steps:
   - action: utter_mindfulness_exercise_3
-  - action: utter_mindfulness_exercise_4
   - intent: maybe_later
   - action: utter_mindfulness_exercise_5
 

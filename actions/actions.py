@@ -4,7 +4,7 @@ from rasa_sdk import Tracker, Action
 from rasa_sdk.events import FollowupAction, EventType, SlotSet, SessionStarted, ActionExecuted
 from rasa_sdk.executor import CollectingDispatcher
 import json
-from actions import database_connectivity as db
+#from actions import database_connectivity as db
 
 
 class ActionSlotReset(Action):

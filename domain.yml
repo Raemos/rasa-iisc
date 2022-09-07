@@ -433,9 +433,7 @@ responses:
   utter_slow_diaphragmatic_breathing_1:
   - text: |-
           Sit comfortably in a chair with your feet on the floor. You can lie down if you wish.
-    image: https://64.media.tumblr.com/849c470c3b6083039d35ef01617efae3/e30618dde4c1e5ef-48/s500x750/2138ac246f323a67a908303ac247eb55d9b098ef.jpg
-  utter_slow_diaphragmatic_breathing_2:
-  - text: |- 
+
           Fold your hands on your belly
     buttons:
     - title: Done
@@ -480,9 +478,7 @@ responses:
   utter_mindfulness_exercise_3:
   - text: |-
           Allow the mind to wander as it will, time after time. Avoid the tendency to try hard to focus on something. Simply allow your mind to wander and then bring yourself back to your breath. Notice the tendency of your experience to change. Imagine that each thought, sensation, emotion—anything— is like a cloud floating through the sky, soon to be replaced by another one.  
-    image: https://64.media.tumblr.com/de81a48ef932addf631c431a60a83ff3/7808759c1d84c89b-b6/s500x750/fbfceab983091cc4091061c3c58c1d8d49bc7243.jpg
-  utter_mindfulness_exercise_4:
-  - text: |- 
+
           Continue to practice this for about 10 minutes. Depending on your schedule you can add time to your practice if you want. Practice once or twice a day.
     buttons:
     - title: Done
