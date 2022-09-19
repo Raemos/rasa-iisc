@@ -4,4 +4,5 @@ WORKDIR /app/
 ENV HOME=/app
 COPY . .
 USER 1001
+WORKDIR /app/actions
 CMD rasa run actions -p $PORT

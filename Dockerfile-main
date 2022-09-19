@@ -5,4 +5,4 @@ ENV HOME=/app
 COPY . .
 #RUN rasa train nlu
 USER 1001
-CMD rasa run --model models --enable-api --port $PORT
+CMD rasa run --model models --enable-api --cors "*" --port $PORT
