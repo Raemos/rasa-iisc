@@ -34,6 +34,19 @@ intents:
 - p_m_r
 - anger_control
 - sad_control
+- emdr
+- not_react
+- method_54321
+- mindful_audio
+- 3_min
+- bodyscan
+- extended_3_min
+- mindful_walking
+- mindful_of_a_difficulty
+- mindfulness_of_a_physical_discomfort
+- mindfulness_of_breath
+- mindful_streching
+- raisin_exercise
 entities:
 - activity_question1
 - activity_question4
@@ -73,6 +86,70 @@ slots:
       conditions:
       - active_loop: story2_form
         requested_slot: story2
+  trigger1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: trigger1_form
+        requested_slot: trigger1
+  trigger2:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: trigger2_form
+        requested_slot: trigger2
+  see:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: see_form
+        requested_slot: see
+  touch:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: touch_form
+        requested_slot: touch
+  hear:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: hear_form
+        requested_slot: hear
+  smell:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: smell_form
+        requested_slot: smell
+  emotion:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: emotion_form
+        requested_slot: emotion
+  feeling1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: feeling1_form
+        requested_slot: feeling1
   feel_more_control:
     type: text
     influence_conversation: true
@@ -124,6 +201,30 @@ forms:
   story2_form:
     required_slots:
     - story2
+  trigger1_form:
+    required_slots:
+    - trigger1
+  trigger2_form:
+    required_slots:
+    - trigger2
+  feeling1_form:
+    required_slots:
+    - feeling1
+  see_form:
+    required_slots:
+    - see
+  touch_form:
+    required_slots:
+    - touch
+  hear_form:
+    required_slots:
+    - hear
+  smell_form:
+    required_slots:
+    - smell
+  emotion_form:
+    required_slots:
+    - emotion
   feel_more_control_form:
     required_slots:
     - feel_more_control
@@ -138,7 +239,7 @@ responses:
   - text: |-
           {name}, it's nice to see you!
           
-          How's your day going so far? Goor or Bad.
+          How's your day going so far? Good or Bad.
     image: https://64.media.tumblr.com/tumblr_m8gotlPTum1qc4uvwo1_400.jpg
   utter_sad_1:
   - text: "Sounds like today didn't go well.\n\n
@@ -391,6 +492,68 @@ responses:
       type: video
       payload:
         src: https://www.youtube.com/embed/1ZYbU82GVz4
+  utter_emdr_1:
+  - text: EMDR focus alternating the emotion and thought process
+    buttons:
+    - title: Done
+      payload: /done
+  utter_emdr_2:
+  - text: |-
+          Now just think about a traumatic event.
+
+          Just think Don't play it in your head yet
+    buttons:
+    - title: Done
+      payload: /done   
+  utter_emdr_3:
+  - text: Now start playing the memory and observe the ball in the video simultaneously
+    attachment:
+      type: video
+      payload:
+        src: https://www.youtube.com/embed/u5D03LP7SKA  
+  utter_not_react_1:
+  - text: Let me help you get better at this
+    buttons:
+    - title: Yes
+      payload: /done
+  utter_not_react_2:
+  - text: So first make a list of the trigger that make you feel angry or upset.
+  utter_not_react_3:
+  - text: Now take a few strong breaths, follow the gif below
+    image: https://64.media.tumblr.com/ee974aa63e199811badf57e50e5575e3/cdb4632a97129ee1-5f/s500x750/9c0d094ebafa6894038c171a2f376cee24f5dafe.gifv
+  utter_not_react_4:
+  - text: Tell me when you are done
+    buttons:
+    - title: Done
+      payload: /done
+  utter_not_react_5:
+  - text: Now lets talk about your strong feeling, the feeling that make you feel overwhelm
+  utter_ask_trigger1:
+  - text: Tell me your first trigger
+  utter_ask_trigger2:
+  - text: Tell me your second trigger
+  utter_ask_feeling1:
+  - text: Tell me about one such feeling 
+  utter_method_54321_1:
+  - text: Start breathe with the gif below.
+    image: https://64.media.tumblr.com/ee974aa63e199811badf57e50e5575e3/cdb4632a97129ee1-5f/s500x750/9c0d094ebafa6894038c171a2f376cee24f5dafe.gifv
+  utter_method_54321_2:
+  - text: Breathe in and out [3-4 time].
+    buttons:
+    - title: Done
+      payload: /done
+  utter_method_54321_3:
+  - text: Now look at your surrounding.
+  utter_ask_see:
+  - text: Tell me 5 things that you see in your surrounding.
+  utter_ask_touch:
+  - text: Now list 4 things you can touch in one sentence.
+  utter_ask_hear:
+  - text: Now tell me 3 things that you can hear in one sentence.
+  utter_ask_smell:
+  - text: Great going! Now tell me 2 things that you can smell.
+  utter_ask_emotion:
+  - text: Now to wrap up, tell me one emotes that you feel
   utter_ask_activity_question1:
   - text: Do you feel no interest or pleasure in doing things this day
     buttons:
@@ -520,6 +683,81 @@ responses:
       payload: /affirm{{"favorite_relaxation":"p_m_r"}}
     - title: No
       payload: /affirm
+  utter_mindful_audio:
+  - text: Select your audio choice
+    buttons:
+    - title: 3-Minute-Breathing-Space
+      payload: /3_min
+    - title: Body-Scan
+      payload: /bodyscan
+    - title: Extended-3-Minute-Breathing-Space
+      payload: /extended_3_min
+    - title: Mindful- Walking
+      payload: /mindful_walking
+    - title: Mindfulness-of-a-Difficulty
+      payload: /mindful_of_a_difficulty
+    - title: Mindfulness-of-Physical-Discomfort
+      payload: /mindfulness_of_a_physical_discomfort
+    - title: Mindfulness-of-the-Breath
+      payload: /mindfulness_of_breath
+    - title: Mindful-Stretching
+      payload: /mindful_streching
+    - title: Raisin-Exercise
+      payload: /raisin_exercise
+  utter_3_min:
+  - text: Listen to this 3 minutes Breathing Space
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\3-Minute-Breathing-Space.mp3
+  utter_bodyscan:
+  - text: Listen to this audio to scan your body
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Body-Scan.mp3
+  utter_extended_3_min:
+  - text: Listen to an extended version of 3 minutes Breathing Space
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Extended-3-Minute-Breathing-Space.mp3
+  utter_mindful_walking:
+  - text: Mindfulness walking audio
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Mindful- Walking.mp3
+  utter_mindful_of_a_difficulty:
+  - text: Mindfulness of a difficulty
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Mindfulness-of-a-Difficulty.mp3
+  utter_mindfulness_of_a_physical_discomfort:
+  - text: Mindfulness-of-Physical-Discomfort
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Mindfulness-of-Physical-Discomfort.mp3
+  utter_mindfulness_of_breath:
+  - text: Mindfulness-of-the-Breath
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Mindfulness-of-the-Breath.mp3
+  utter_mindful_streching:
+  - text: Mindful-Stretching
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Mindful-Stretching.mp3
+  utter_raisin_exercise:
+  - text: Raisin-Exercise
+    attachment:
+      type: video
+      payload:
+        src: mindfulness-audio\Raisin-Exercise.mp3
   utter_goodbye:
   - text: Bye
   utter_iamabot:
@@ -549,6 +787,14 @@ actions:
 - action_pmr
 - action_story2
 - action_capitalize
+- action_trigger1
+- action_trigger2
+- action_feeling1
+- action_see
+- action_touch
+- action_hear
+- action_smell
+- action_emotion
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true

@@ -4,8 +4,6 @@ from rasa_sdk import Tracker, Action
 from rasa_sdk.events import FollowupAction, EventType, SlotSet, SessionStarted, ActionExecuted
 from rasa_sdk.executor import CollectingDispatcher
 import json
-#from actions import database_connectivity as db
-
 
 class ActionSlotReset(Action):
     def name(self) -> Text:
@@ -16,6 +14,14 @@ class ActionSlotReset(Action):
     ) -> List[Dict[Text, Any]]:
 
         return[
+            SlotSet("see", None),
+            SlotSet("hear", None),
+            SlotSet("touch", None),
+            SlotSet("smell", None),
+            SlotSet("emotion", None),
+            SlotSet("feeling1", None),
+            SlotSet("trigger1", None),
+            SlotSet("trigger2", None),
             SlotSet("activity_question1", None),
             SlotSet("activity_question2", None),
             SlotSet("activity_question3", None),
@@ -219,6 +225,94 @@ class ActionStory1(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         return [FollowupAction('story1_form')]
+
+class ActionTrigger1(Action):
+    
+    def name(self) -> Text:
+        return "action_trigger1"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('trigger1_form')]
+
+class ActionTrigger2(Action):
+    
+    def name(self) -> Text:
+        return "action_trigger2"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('trigger2_form')]
+
+class ActionFeeling1(Action):
+    
+    def name(self) -> Text:
+        return "action_feeling1"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('feeling1_form')]
+
+class ActionSee(Action):
+    
+    def name(self) -> Text:
+        return "action_see"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('see_form')]
+
+class ActionTouch(Action):
+    
+    def name(self) -> Text:
+        return "action_touch"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('touch_form')]
+
+class ActionHear(Action):
+    
+    def name(self) -> Text:
+        return "action_hear"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('hear_form')]
+
+class ActionSmell(Action):
+    
+    def name(self) -> Text:
+        return "action_smell"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('smell_form')]
+
+class ActionEmotion(Action):
+    
+    def name(self) -> Text:
+        return "action_emotion"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('emotion_form')]
 
 class ActionFavoriteRelaxation(Action):
     

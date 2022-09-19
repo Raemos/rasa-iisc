@@ -472,3 +472,255 @@ rules:
   - action: action_slot_reset
   - action: action_session_start
 
+- rule: emdr path 1
+  steps:
+  - intent: emdr
+  - action: utter_emdr_1
+
+- rule: emdr path 2
+  steps:
+  - action: utter_emdr_1
+  - intent: done
+  - action: utter_emdr_2
+
+- rule: emdr path 3
+  steps:
+  - action: utter_emdr_2
+  - intent: done
+  - action: utter_emdr_3
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: not_react path 1
+  steps:
+  - intent: not_react
+  - action: utter_not_react_1
+
+- rule: not_react path 2
+  steps:
+  - action: utter_not_react_1
+  - intent: done
+  - action: utter_not_react_2
+  - action: action_trigger1
+
+- rule: trigger 1 Form
+  steps:
+  - action: trigger1_form
+  - active_loop: trigger1_form
+
+- rule: trigger 1 Form 1
+  condition:
+  - active_loop: trigger1_form
+  steps:
+  - action: trigger1_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_trigger2
+
+- rule: trigger 2 Form
+  steps:
+  - action: trigger2_form
+  - active_loop: trigger2_form
+
+- rule: trigger 2 Form 1
+  condition:
+  - active_loop: trigger2_form
+  steps:
+  - action: trigger2_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_not_react_3
+  - action: utter_not_react_4
+  - intent: done
+  - action: utter_not_react_5
+  - action: action_feeling1
+
+- rule: feeling 1 Form
+  steps:
+  - action: feeling1_form
+  - active_loop: feeling1_form
+
+- rule: feeling 1 Form 1
+  condition:
+  - active_loop: feeling1_form
+  steps:
+  - action: feeling1_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_not_react_3
+  - action: utter_not_react_4
+  - intent: done
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: method_54321 path 1
+  steps:
+  - intent: method_54321
+  - action: utter_method_54321_1
+  - action: utter_method_54321_2
+
+- rule: method_54321 path 2
+  steps:
+  - action: utter_method_54321_2
+  - intent: done
+  - action: action_see
+
+- rule: see 1 Form
+  steps:
+  - action: see_form
+  - active_loop: see_form
+
+- rule: see 1 Form 1
+  condition:
+  - active_loop: see_form
+  steps:
+  - action: see_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_touch
+
+- rule: touch 1 Form
+  steps:
+  - action: touch_form
+  - active_loop: touch_form
+
+- rule: touch 1 Form 1
+  condition:
+  - active_loop: touch_form
+  steps:
+  - action: touch_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_hear
+
+- rule: hear 1 Form
+  steps:
+  - action: hear_form
+  - active_loop: hear_form
+
+- rule: hear 1 Form 1
+  condition:
+  - active_loop: hear_form
+  steps:
+  - action: hear_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_smell
+
+- rule: smell 1 Form
+  steps:
+  - action: smell_form
+  - active_loop: smell_form
+
+- rule: smell 1 Form 1
+  condition:
+  - active_loop: smell_form
+  steps:
+  - action: smell_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_emotion
+
+- rule: emotion 1 Form
+  steps:
+  - action: emotiom_form
+  - active_loop: emotiom_form
+
+- rule: emotion 1 Form 1
+  condition:
+  - active_loop: emotiom_form
+  steps:
+  - action: emotiom_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+
+- rule: mindful_audio path 1
+  steps:
+  - intent: mindful_audio
+  - action: utter_mindful_audio
+
+- rule: mindful_audio path 2
+  steps:
+  - intent: 3_min
+  - action: utter_3_min
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 3
+  steps:
+  - intent: bodyscan
+  - action: utter_bodyscan
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 4
+  steps:
+  - intent: extended_3_min
+  - action: utter_extended_3_min
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 5
+  steps:
+  - intent: mindful_walking
+  - action: utter_mindful_walking
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 6
+  steps:
+  - intent: mindful_of_a_difficulty
+  - action: utter_mindful_of_a_difficulty
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 7
+  steps:
+  - intent: mindfulness_of_a_physical_discomfort
+  - action: utter_mindfulness_of_a_physical_discomfort
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 8
+  steps:
+  - intent: mindfulness_of_breath
+  - action: utter_mindfulness_of_breath
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 9
+  steps:
+  - intent: mindful_streching
+  - action: utter_mindful_streching
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
+
+- rule: mindful_audio path 10
+  steps:
+  - intent: raisin_exercise
+  - action: utter_raisin_exercise
+  - action: utter_do_next
+  - action: action_slot_reset
+  - action: action_session_start
