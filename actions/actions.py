@@ -314,6 +314,17 @@ class ActionEmotion(Action):
 
         return [FollowupAction('emotion_form')]
 
+class ActionEmotion2(Action):
+    
+    def name(self) -> Text:
+        return "action_emotion_2"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        return [FollowupAction('utter_done')]
+
 class ActionFavoriteRelaxation(Action):
     
     def name(self) -> Text:

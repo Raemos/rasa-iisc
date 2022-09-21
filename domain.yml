@@ -140,7 +140,7 @@ slots:
     mappings:
     - type: from_text
       conditions:
-      - active_loop: emotion_form
+      - active_loop: smell_form
         requested_slot: emotion
   feeling1:
     type: text
@@ -222,8 +222,6 @@ forms:
   smell_form:
     required_slots:
     - smell
-  emotion_form:
-    required_slots:
     - emotion
   feel_more_control_form:
     required_slots:
@@ -480,6 +478,8 @@ responses:
       type: video
       payload:
         src: https://www.youtube.com/embed/h03l_BuBq14
+  utter_done:
+  - text: Now you are done.
   utter_sleepStories:
   - text: Play and close your eyes.
     attachment:
@@ -709,55 +709,55 @@ responses:
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\3-Minute-Breathing-Space.mp3
+        src: https://www.youtube.com/embed/I7TAfbZkRcs
   utter_bodyscan:
   - text: Listen to this audio to scan your body
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Body-Scan.mp3
+        src: https://www.youtube.com/embed/T0nuKBVQS7M
   utter_extended_3_min:
   - text: Listen to an extended version of 3 minutes Breathing Space
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Extended-3-Minute-Breathing-Space.mp3
+        src: https://www.youtube.com/embed/amX1IuYFv8A
   utter_mindful_walking:
   - text: Mindfulness walking audio
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Mindful- Walking.mp3
+        src: https://www.youtube.com/embed/ElHCp33OIOo
   utter_mindful_of_a_difficulty:
   - text: Mindfulness of a difficulty
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Mindfulness-of-a-Difficulty.mp3
+        src: https://www.youtube.com/embed/nlEFKxGNPHk
   utter_mindfulness_of_a_physical_discomfort:
   - text: Mindfulness-of-Physical-Discomfort
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Mindfulness-of-Physical-Discomfort.mp3
+        src: https://www.youtube.com/embed/dQjZdU9mRCA
   utter_mindfulness_of_breath:
   - text: Mindfulness-of-the-Breath
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Mindfulness-of-the-Breath.mp3
+        src: https://www.youtube.com/embed/I-SFdhVwrVA
   utter_mindful_streching:
   - text: Mindful-Stretching
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Mindful-Stretching.mp3
+        src: https://www.youtube.com/embed/19FWt_iEFho
   utter_raisin_exercise:
   - text: Raisin-Exercise
     attachment:
       type: video
       payload:
-        src: mindfulness-audio\Raisin-Exercise.mp3
+        src: https://www.youtube.com/embed/oMQ7QqaHvW8
   utter_goodbye:
   - text: Bye
   utter_iamabot:
@@ -795,6 +795,7 @@ actions:
 - action_hear
 - action_smell
 - action_emotion
+- action_emotion_2
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
