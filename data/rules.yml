@@ -628,21 +628,11 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
-  - action: action_emotion
+  - action: action_emotion_2
 
-- rule: emotion 1 Form
+- rule: emotion 1 form 2  
   steps:
-  - action: emotiom_form
-  - active_loop: emotiom_form
-
-- rule: emotion 1 Form 1
-  condition:
-  - active_loop: emotiom_form
-  steps:
-  - action: emotiom_form
-  - active_loop: null
-  - slot_was_set:
-    - requested_slot: null
+  - action: utter_done
   - action: utter_do_next
   - action: action_slot_reset
   - action: action_session_start
