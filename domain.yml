@@ -54,6 +54,11 @@ entities:
 - activity_question3
 - favorite_relaxation
 slots:
+  just_text:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
   name:
     type: text
     influence_conversation: true
@@ -796,6 +801,7 @@ actions:
 - action_smell
 - action_emotion
 - action_emotion_2
+- action_trigger
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
