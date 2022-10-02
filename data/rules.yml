@@ -1,10 +1,12 @@
 version: "3.1"
 
 rules:
+  
 
 - rule: Greet
   steps:
   - intent: greet
+  - action: action_trigger
   - action: action_name
   - action: utter_greet_option
 
@@ -21,6 +23,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_capitalize
   - action: utter_greet_option
 
@@ -32,6 +35,7 @@ rules:
 - rule: check In sad path 2
   steps:
   - intent: mood_unhappy
+  - action: action_trigger
   - action: utter_sad_2
 
 - rule: Activate feel more Form
@@ -47,6 +51,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_feel_more_control_repeat
   - intent: maybe_later
   - action: utter_feel_more_control_done
@@ -91,6 +96,7 @@ rules:
 - rule: Say goodbye anytime the user says goodbye
   steps:
   - intent: goodbye
+  - action: action_trigger
   - action: utter_goodbye
   - action: action_slot_reset
   - action: action_session_start
@@ -98,6 +104,7 @@ rules:
 - rule: Say 'I am a bot' anytime the user challenges
   steps:
   - intent: bot_challenge
+  - action: action_trigger
   - action: utter_iamabot
   - action: action_slot_reset
   - action: action_session_start
@@ -115,6 +122,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_activity
   - action: utter_do_next
   - action: action_slot_reset
@@ -233,6 +241,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_sadness_1
   - action: action_favorite_relaxation
 
@@ -255,6 +264,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_feel_more_control
   - action: action_feel_more_control
 
@@ -283,12 +293,14 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_manage_anger
   - action: action_favorite_relaxation
 
 - rule: check In happy path 1
   steps:
   - intent: mood_great
+  - action: action_trigger
   - action: utter_great
 
 - rule: check In happy path 2
@@ -517,6 +529,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_trigger2
 
 - rule: trigger 2 Form
@@ -532,6 +545,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_not_react_3
   - action: utter_not_react_4
   - intent: done
@@ -551,6 +565,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: utter_not_react_3
   - action: utter_not_react_4
   - intent: done
@@ -583,6 +598,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_touch
 
 - rule: touch 1 Form
@@ -598,6 +614,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_hear
 
 - rule: hear 1 Form
@@ -613,6 +630,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_smell
 
 - rule: smell 1 Form
@@ -628,6 +646,7 @@ rules:
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
+  - action: action_trigger
   - action: action_emotion_2
 
 - rule: emotion 1 form 2  
