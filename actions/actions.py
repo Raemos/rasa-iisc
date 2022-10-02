@@ -14,6 +14,7 @@ class ActionSlotReset(Action):
     ) -> List[Dict[Text, Any]]:
 
         return[
+            SlotSet("just_text", None),
             SlotSet("see", None),
             SlotSet("hear", None),
             SlotSet("touch", None),
@@ -31,6 +32,28 @@ class ActionSlotReset(Action):
             SlotSet("story2", None),
             SlotSet("feel_more_control", None)
             ]
+
+class TriggerWords(Action):
+    
+    def name(self) -> Text:
+        return "action_trigger"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        trigger = tracker.get_slot('just_text')
+        list = ['sucide', 'kill', 'die', 'sucidal', 'kill myself', 'end my life']
+        t = trigger.split()
+        for i in list:
+            if i in t:
+                buttons = []
+                buttons.append({"title": 'HR' , "payload": 'hr'})
+                buttons.append({"title": 'Professional' , "payload": 'professional'})
+                dispatcher.utter_message(text = "Hey I sense a trigger word would you like to take this up with your HR or a professional?", buttons=buttons)
+                return [FollowupAction('action_listen')]
+        return []
+                 
 
 class ActionName(Action):
     
