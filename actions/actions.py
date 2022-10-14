@@ -260,6 +260,36 @@ class ActionTrigger1(Action):
 
         return [FollowupAction('trigger1_form')]
 
+class ActionTrigger_1(Action):
+    
+    def name(self) -> Text:
+        return "action_trigger_1"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        trigger = tracker.get_slot('trigger1')
+
+        dispatcher.utter_message(text = "Why do you think '" + trigger + "'' upsets you?")
+
+        return [FollowupAction('trigger1_1_form')]
+
+class ActionTrigger3(Action):
+    
+    def name(self) -> Text:
+        return "action_trigger3"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        trigger = tracker.get_slot('trigger2')
+
+        dispatcher.utter_message(text = "Why do you think '" + trigger + "'' upsets you?")
+
+        return [FollowupAction('trigger2_1_form')]
+
 class ActionTrigger2(Action):
     
     def name(self) -> Text:
