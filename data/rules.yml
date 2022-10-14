@@ -530,6 +530,22 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - action: action_trigger
+  - action: action_trigger_1
+
+- rule: trigger 1 1 Form
+  steps:
+  - action: trigger1_1_form
+  - active_loop: trigger1_1_form
+
+- rule: trigger 1 1 Form 1
+  condition:
+  - active_loop: trigger1_1_form
+  steps:
+  - action: trigger1_1_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_trigger
   - action: action_trigger2
 
 - rule: trigger 2 Form
@@ -542,6 +558,22 @@ rules:
   - active_loop: trigger2_form
   steps:
   - action: trigger2_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: action_trigger
+  - action: action_trigger3
+
+- rule: trigger 2 1 Form
+  steps:
+  - action: trigger2_1_form
+  - active_loop: trigger2_1_form
+
+- rule: trigger 2 1 Form 1
+  condition:
+  - active_loop: trigger2_1_form
+  steps:
+  - action: trigger2_1_form
   - active_loop: null
   - slot_was_set:
     - requested_slot: null
