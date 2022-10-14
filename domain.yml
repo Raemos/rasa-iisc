@@ -107,6 +107,22 @@ slots:
       conditions:
       - active_loop: trigger2_form
         requested_slot: trigger2
+  trigger1_1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: trigger1_1_form
+        requested_slot: trigger1_1
+  trigger2_1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: trigger2_1_form
+        requested_slot: trigger2_1
   see:
     type: text
     influence_conversation: true
@@ -212,6 +228,12 @@ forms:
   trigger2_form:
     required_slots:
     - trigger2
+  trigger1_1_form:
+    required_slots:
+    - trigger1_1
+  trigger2_1_form:
+    required_slots:
+    - trigger2_1
   feeling1_form:
     required_slots:
     - feeling1
@@ -516,6 +538,10 @@ responses:
       type: video
       payload:
         src: https://www.youtube.com/embed/u5D03LP7SKA  
+  utter_ask_trigger1_1:
+  - text: You can tell me about it
+  utter_ask_trigger2_1:
+  - text: You can tell me about it
   utter_not_react_1:
   - text: Let me help you get better at this
     buttons:
@@ -802,6 +828,8 @@ actions:
 - action_emotion
 - action_emotion_2
 - action_trigger
+- action_trigger3
+- action_trigger_1
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
